@@ -10,7 +10,7 @@ class CuentaBancaria {
         this.historial = [];
     }
 
-    depositar(monto: number) {
+    depositar(monto: number): string {
         if (monto <= 0) {
             return "Ingrese un monto válido"
         } else {
@@ -20,7 +20,7 @@ class CuentaBancaria {
         }
     }
 
-    retirar(monto: number) {
+    retirar(monto: number): string {
         if (monto > this.saldo) {
             return "Saldo Insuficiente"
         } else {
@@ -30,11 +30,11 @@ class CuentaBancaria {
         }
     }
 
-    consultarSaldo() {
+    consultarSaldo(): string {
         return `Tu saldo actual es de: $${this.saldo}`;
     }
 
-    obtenerHistorial() {
+    obtenerHistorial(): string[] {
         return this.historial
     }
 }
